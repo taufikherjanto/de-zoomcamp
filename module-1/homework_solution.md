@@ -54,8 +54,20 @@ Given the docker-compose.yaml, what is the hostname and port that pgadmin should
 
 ## Question 3.
 
-
-
+```
+trip_distance = (
+    (df["lpep_pickup_datetime"] >= "2025-11-01") &
+    (df["lpep_pickup_datetime"] <  "2025-12-01") &
+    (df["trip_distance"] <= 1)
+).sum()
+int(trip_distance)
+```
+Question 3. For the trips in November 2025, how many trips had a trip_distance of less than or equal to 1 mile? (1 point)
+- 7,853
+- 8,007 <--
+- 8,254
+- 8,421
+  
 ## Question 4.
 
 ```
