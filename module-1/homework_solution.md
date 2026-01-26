@@ -111,13 +111,32 @@ ORDER BY total_rev DESC
 LIMIT 1;
 ```
 Question 5. Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025? (1 point)
-- East Harlem North <--
+- East Harlem North <---
 - East Harlem South
 - Morningside Heights
 - Forest Hills
 
 
-## Question 6.
+## Question 6. Largest tip
+```
+SELECT
+    z_drop."Zone" AS dropoff_zone,
+    t.tip_amount
+FROM green_taxi_trips t
+JOIN zones z_pick
+    ON t."PULocationID" = z_pick."LocationID"
+JOIN zones z_drop
+    ON t."DOLocationID" = z_drop."LocationID"
+WHERE z_pick."Zone" = 'East Harlem North'
+  AND t.lpep_pickup_datetime >= '2025-11-01'
+  AND t.lpep_pickup_datetime < '2025-12-01'
+ORDER BY t.tip_amount DESC
+LIMIT 1;
+```
+Question 6. For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip? (1 point)
+- JFK Airport
+- Yorkville West <---
+- East Harlem North
+- LaGuardia Airport
 
-
-## Question 7.
+## Question 7. 
