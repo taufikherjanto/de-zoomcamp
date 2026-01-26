@@ -89,15 +89,32 @@ max_trip["lpep_pickup_datetime"].dt.date
 </p>
 
 Which was the pick up day with the longest trip distance? Only consider trips with `trip_distance` less than 100 miles (to exclude data errors).
-
 - 2025-11-14 <---
 - 2025-11-20
 - 2025-11-23
 - 2025-11-25
 
 
-## Question 5.
+## Question 5. Biggest pickup zone
+Join with table zone
 
+```
+SELECT
+    z."Zone" AS pickup_zone,
+    SUM(t.total_amount) AS total_rev
+FROM green_taxi_trips t
+JOIN zones z
+    ON t."PULocationID" = z."LocationID"
+WHERE DATE(t.lpep_pickup_datetime) = '2025-11-18'
+GROUP BY z."Zone"
+ORDER BY total_rev DESC
+LIMIT 1;
+```
+Question 5. Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025? (1 point)
+- East Harlem North <--
+- East Harlem South
+- Morningside Heights
+- Forest Hills
 
 
 ## Question 6.
