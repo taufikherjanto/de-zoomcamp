@@ -62,9 +62,13 @@ trip_distance = (
 ).sum()
 int(trip_distance)
 ```
+<p align="center">
+  <img width="60%" src="images/question_3.png" alt="answer_question_4">
+</p>
+
 Question 3. For the trips in November 2025, how many trips had a trip_distance of less than or equal to 1 mile? (1 point)
 - 7,853
-- 8,007 <--
+- 8,007 <---
 - 8,254
 - 8,421
   
