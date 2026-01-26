@@ -58,6 +58,26 @@ Given the docker-compose.yaml, what is the hostname and port that pgadmin should
 
 ## Question 4.
 
+```
+# filter trip_distance kurang dari 100
+df_lt_100 = df[df["trip_distance"] < 100]
+# cari trip paling jauh
+max_distance = df_lt_100["trip_distance"].max()
+# ambil 1 baris data yang trip paling jauh
+max_trip = df_lt_100[df_lt_100["trip_distance"] == max_distance]
+# ambil tanggalnya
+max_trip["lpep_pickup_datetime"].dt.date
+```
+<p align="center">
+  <img width="60%" src="images/question_4.png" alt="answer_question_4">
+</p>
+
+Which was the pick up day with the longest trip distance? Only consider trips with `trip_distance` less than 100 miles (to exclude data errors).
+
+- 2025-11-14 <---
+- 2025-11-20
+- 2025-11-23
+- 2025-11-25
 
 
 ## Question 5.
