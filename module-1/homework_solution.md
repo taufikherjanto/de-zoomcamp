@@ -51,4 +51,20 @@ Given the docker-compose.yaml, what is the hostname and port that pgadmin should
 - db:5433
 - postgres:5432
 - db:5432 <---
- 
+
+## Question 3.
+
+
+
+## Question 4.
+
+
+
+## Question 5.
+
+
+
+## Question 6.
+
+
+## Question 7.
