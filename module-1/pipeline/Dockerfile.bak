@@ -1,0 +1,14 @@
+# base docker image
+FROM python:3.13-slim
+
+# install requirement
+RUN pip install pandas pyarrow
+
+# set working directory 
+WORKDIR /app
+
+# copy file into container
+COPY pipeline.py pipeline.py
+
+# run script
+ENTRYPOINT ["python", "pipeline.py"]
