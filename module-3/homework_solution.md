@@ -12,7 +12,7 @@ BigQuery stores table data in columnar format, meaning it stores each column sep
 #### Question 4. Question 4. How many records have a fare_amount of 0? (1 point)
 8,333
 
-Question 5. What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy) (1 point)
+#### Question 5. What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy) (1 point)
 Partition by tpep_dropoff_datetime and Cluster on VendorID
 Clustered tables sort data based on user-defined sorting properties. Data in these clustered columns is sorted into storage blocks whose size is adaptively adjusted based on the table size. However, when you run a query that filters based on a clustered column, BigQuery only scans the relevant blocks based on that clustered column, not the entire table or table partition. In a combined approach that uses table partitions and clustering, table data is first divided into partitions, then the data within each partition is clustered based on the clustering column. With this approach, you can achieve more detailed sorting, as shown in the following diagram:
 
